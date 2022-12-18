@@ -1,7 +1,7 @@
 const path = require('path');
 const http = require('http');
 const express = require('express');
-const socketio = require('socket.io');
+const { Server } = require('socket.io');
 const { on } = require('stream');
 
 const {
@@ -24,7 +24,7 @@ const port = process.env.PORT || 3000;
 const server = http.createServer(app);
 
 // server was created for purpose of passing it to socketio
-const io = socketio(server);
+const io = new Server(server);
 
 const welcomeMessage = 'Welcome to the Chat!';
 
