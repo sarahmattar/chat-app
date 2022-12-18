@@ -1,4 +1,4 @@
-const socket = io();
+const socket = io(window.location.origin);
 
 const $messageForm = document.querySelector('#message-form');
 const $messageFormInput = $messageForm.querySelector('input');
